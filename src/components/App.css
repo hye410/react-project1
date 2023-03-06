@@ -1,0 +1,165 @@
+#root{
+  /* background-color: rgba(233, 247, 230, 0.907); */
+  padding-top : 50px;
+}
+#wrap{
+  width : 1200px;
+  margin: 0 auto;
+  /* background-color: rgb(25, 104, 58);
+   */
+   background-color:  rgb(243, 182, 76);
+  padding : 30px;
+}
+
+#wrap>h1{
+  font-size: 35px;
+  color : #fff;
+  font-weight: bold;
+  margin-bottom : 35px;
+  display: flex;
+  align-items: center;
+}
+
+#search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: antiquewhite; */
+  position:relative;
+}
+
+#search>svg{
+  font-size: 25px;
+  color: #fff;
+}
+
+#search>input{
+  width : 80%;
+  height: 25px;
+  margin: 0 5px;
+  border : none;
+}
+
+#search>button{
+  border : none;
+  background-color: rgb(61, 110, 154);
+  color:#fff;
+  width:100px;
+  font-size: 20px;
+}
+
+#search>button>svg{
+  font-size: 20px;
+}
+
+#search>ul{
+  position:absolute;
+  top:27px;
+  right:50.5px;
+  text-align: center;
+  background-color: rgb(61, 110, 154);
+  width : 100px;
+}
+
+#search>ul>li{
+  padding : 10px 5px;
+  color : #fff;
+  border-top : 1px dotted #fff;
+}
+
+#content{
+  display: flex;
+}
+
+#content>div.addinquiry{
+  width : 40%;
+  padding : 50px 0;
+  /* background-color: antiquewhite; */
+  /* text-align: center; */
+}
+
+#content>div.addinquiry>h3{
+  font-size: 25px;
+  text-align: center;
+  margin-bottom :15px;
+  color : #fff;
+  font-weight: bold;
+}
+
+#content>div.addinquiry>dl{
+  width : 80%;
+  padding : 30px 0;
+  margin : 0 auto;
+  background-color: rgb(61, 110, 154);
+  text-align: center;
+}
+
+#content>div.addinquiry>dl>dt{
+  margin-bottom: 5px;
+  padding: 10px  5px;
+  text-indent: 3px;
+  text-align: center;
+  font-weight: bold;
+  color : #fff;
+  /* background-color: #fff; */
+  /* display: inline-block; */
+}
+
+#content>div.addinquiry>dl>dd>input{
+  border : none;
+  margin-bottom : 10px;
+}
+
+#content>div.addinquiry>dl>dd>textarea{
+  margin-bottom:18px;
+  text-indent: 5px;
+}
+
+#content>div.addinquiry>dl>dd>button{
+  width :55%;
+  padding : 5px 5px;
+  color:#666;
+  border: none;
+  box-shadow: 1px 2px 3px rgb(61, 61, 66);
+  margin-bottom : 5px;
+}
+
+#content>div.addinquiry>dl>dd>button:active{
+  transform: translate(2px,2px);
+}
+
+
+#content>div.inquiry{
+  width : 70%;
+  margin-left : 5px;
+  padding-top:80px;
+}
+
+#content>div.inquiry>ul>li{
+  background-color: rgb(235, 239, 231);
+  padding : 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom : 1px solid #000;
+  margin-bottom : 5px;
+  color:rgb(61, 59, 6);
+}
+#content>div.inquiry>ul>li>dl>dt{
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+#content>div.inquiry>ul>li>dl>dd{
+  padding : 5px 0 10px 0;
+  margin-bottom : 5px;
+}
+
+#content>div.inquiry>ul>li>button{
+  height: 40px;
+  font-size: 20px;
+  background-color: tomato;
+  color:#fff;
+  border : none;
+}
+
