@@ -1,8 +1,18 @@
 import { useState } from "react";
 
+
 function InfoContent({newInfo,setNewInfo,sendInfo}){
+  
+  const now = new Date().toISOString().slice(0,10);
+  const nowDate = new Date().getDate() + 7;
+  // console.log(nowDate)
+  const ableDate = new Date().setDate(nowDate);
+  const maxDate = new Date(ableDate).toISOString().slice(0,10)
+  // console.log(maxDate)
+
   return(
     <>
+    <dl>
     <dt>
       <label htmlFor="userName">고객이름</label>
     </dt>
@@ -23,32 +33,37 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
       onChange = {(event) => setNewInfo({...newInfo,title:event.target.value})} />
     </dd>
     <dt>
-      <label htmlFor="userDate">등록일</label>
+      <label htmlFor="userDate">콜 요청 날짜</label>
     </dt>
     <dd>
       <input 
         type="date"
         id="userDate"
+        name="userDate"
+        defaultValue={now}
+        min = {now}
+        max = {maxDate}
         onChange = {(event) => setNewInfo({...newInfo,date:event.target.value})}/>
     </dd>
     <dt>
       <label htmlFor="userText">내용</label>
     </dt>
     <dd>
-      <textarea rows="5" cols="22"
+      <textarea rows="10" cols="40"
         id="userText"
         onChange = {(event) => setNewInfo({...newInfo,body:event.target.value})}></textarea>
     </dd>
-    <dd>
+    </dl>
+    <p>
     <button type="button"
-        onClick={sendInfo}>문의하기</button>
-    </dd>
+        onClick={sendInfo}>신청하기</button>
+    </p>
     </>
   )
 }
 
 
-function AddInquiry({addInfo,newId}){
+function AddRequest({addInfo,newId}){
 
   const clear = {
     people: "",
@@ -78,16 +93,14 @@ function AddInquiry({addInfo,newId}){
   }
 
 return(
-  <div className="addinquiry">
-    <h3>문의하기</h3>
-    <dl>
+  <div className="addRequest">
+    {/* <h3>신청하기</h3> */}
       <InfoContent
         newInfo={newInfo}
         setNewInfo={setNewInfo}
         sendInfo={sendInfo} />
-    </dl>
   </div>
 )
 }
 
-export default AddInquiry;
+export default AddRequest;

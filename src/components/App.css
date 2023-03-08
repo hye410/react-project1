@@ -5,10 +5,8 @@
 #wrap{
   width : 1200px;
   margin: 0 auto;
-  /* background-color: rgb(25, 104, 58);
-   */
-   background-color:  rgb(243, 182, 76);
-  padding : 30px;
+  background-color:  rgb(243, 182, 76);
+  padding : 30px ;
 }
 
 #wrap>h1{
@@ -21,145 +19,164 @@
 }
 
 #search{
+  position:relative;
+  margin-bottom :40px;
+}
+
+#search>div{
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: antiquewhite; */
-  position:relative;
+  width : 40%;
+  margin : 0 auto;
 }
 
-#search>svg{
+#search>div>svg{
   font-size: 25px;
-  color: #fff;
+  padding : 0 10px;
 }
 
-#search>input{
-  width : 80%;
+#search>div>input{
+  width : 100%;
   height: 25px;
   margin: 0 5px;
   border : none;
+  padding : 5px 0;
 }
 
-#search>button{
+#search>div>button{
   border : none;
   background-color: rgb(61, 110, 154);
   color:#fff;
-  width:100px;
+  width:150px;
+  padding :5px 0;
   font-size: 20px;
 }
 
-#search>button>svg{
+#search>div>button>svg{
   font-size: 20px;
 }
 
 #search>ul{
   position:absolute;
-  top:27px;
-  right:50.5px;
+  top:35px;
+  right:30%;
   text-align: center;
-  background-color: rgb(61, 110, 154);
-  width : 100px;
+  /* background-color: rgb(61, 110, 154); */
+  background-color: #fff;
+  width : 103px;
 }
 
 #search>ul>li{
   padding : 10px 5px;
-  color : #fff;
+  color : #6c6c6c;
   border-top : 1px dotted #fff;
 }
 
-#content{
-  display: flex;
+#search>ul>li:nth-child(1){
+  border-bottom : 1px solid #666;
 }
 
-#content>div.addinquiry{
-  width : 40%;
-  padding : 50px 0;
-  /* background-color: antiquewhite; */
-  /* text-align: center; */
-}
-
-#content>div.addinquiry>h3{
-  font-size: 25px;
-  text-align: center;
-  margin-bottom :15px;
-  color : #fff;
-  font-weight: bold;
-}
-
-#content>div.addinquiry>dl{
-  width : 80%;
-  padding : 30px 0;
+#content>div.addRequest>dl{
+  width : 50%;
   margin : 0 auto;
   background-color: rgb(61, 110, 154);
+  padding : 20px 0;
   text-align: center;
+  color: #ffffff;
 }
 
-#content>div.addinquiry>dl>dt{
-  margin-bottom: 5px;
-  padding: 10px  5px;
-  text-indent: 3px;
+#content>div.addRequest>dl>dt{
   text-align: center;
   font-weight: bold;
-  color : #fff;
-  /* background-color: #fff; */
-  /* display: inline-block; */
+  box-sizing: border-box;
+  font-size: 18px;
+  /* border-bottom : 1px solid #fff; */
 }
 
-#content>div.addinquiry>dl>dd>input{
+#content>div.addRequest>dl>dd{
+  box-sizing: border-box;
+  font-size: 18px;
+  padding : 20px 0;
+  }
+  
+#content>div.addRequest>dl>dd>input{
   border : none;
-  margin-bottom : 10px;
+  width : 50%;
+  padding : 10px 0;
+  box-sizing: border-box;
+  text-indent: 15px;
+  background-color: rgb(255, 255, 255);
 }
 
-#content>div.addinquiry>dl>dd>textarea{
+#content>div.addRequest>dl>dd>textarea{
   margin-bottom:18px;
   text-indent: 5px;
+  padding-top : 5px;
 }
 
-#content>div.addinquiry>dl>dd>button{
-  width :55%;
-  padding : 5px 5px;
-  color:#666;
-  border: none;
-  box-shadow: 1px 2px 3px rgb(61, 61, 66);
-  margin-bottom : 5px;
+#content>div.addRequest>p{
+  text-align: center;
+  width : 50%;
+  margin : 0 auto 50px;
+  box-sizing: border-box;
 }
 
-#content>div.addinquiry>dl>dd>button:active{
+#content>div.addRequest>p>button{
+  width :100%;
+  border : none;
+  padding : 15px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#content>div.addRequest>p>button:active{
   transform: translate(2px,2px);
 }
 
 
-#content>div.inquiry{
-  width : 70%;
-  margin-left : 5px;
-  padding-top:80px;
+
+#content>div.request{
+  width : 80%;
+  margin : 0 auto;
 }
 
-#content>div.inquiry>ul>li{
-  background-color: rgb(235, 239, 231);
-  padding : 20px 30px;
+#content>div.request>h3{
+  font-size: 30px;
+  padding : 0 10px;
+  font-weight: bold;
+  color : #fff;
+  margin-bottom : 20px;
+}
+#content>div.request>ul>li{
+  background-color: rgba(255, 255, 255, 0.833);
+  padding : 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom : 1px solid #000;
-  margin-bottom : 5px;
-  color:rgb(61, 59, 6);
+  margin-bottom : 10px;
 }
-#content>div.inquiry>ul>li>dl>dt{
-  padding: 10px 0;
+#content>div.request>ul>li>dl>dt{
   font-weight: bold;
+  margin-bottom : 10px;
 }
 
-#content>div.inquiry>ul>li>dl>dd{
-  padding : 5px 0 10px 0;
-  margin-bottom : 5px;
+#content>div.request>ul>li>dl>dd{
+  margin-bottom : 20px;
+  text-indent: 10px;
 }
 
-#content>div.inquiry>ul>li>button{
-  height: 40px;
+#content>div.request>ul>li>button{
+  width : 33px;
+  height: 33px;
   font-size: 20px;
   background-color: tomato;
   color:#fff;
   border : none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 

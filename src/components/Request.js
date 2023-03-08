@@ -1,13 +1,14 @@
 import { BiTrash } from "react-icons/bi";
 
-function Addlist({data,DeleteList}){
+function RequestList({data,DeleteList}){
   
-  function date2(){
-    const ddate =  new Date(Number(data.date));
+  function changeDate(){
+    const date =  new Date(Number(data.date));
     return(
-    `${ddate.getFullYear()}년
-    ${ddate.getMonth() + 1}월
-    ${ddate.getDate()}일
+    `
+    ${date.getFullYear()}년
+    ${date.getMonth() + 1}월
+    ${date.getDate()}일
     `
     )
   }
@@ -18,7 +19,7 @@ function Addlist({data,DeleteList}){
       <dt>이름</dt>
       <dd>{data.people}</dd>
       <dt>등록일</dt>
-      <dd>{date2(data.date)}</dd>
+      <dd>{changeDate(data.date)}</dd>
       <dt>제목</dt>
       <dd>{data.title}</dd>
       <dt>내용</dt>
@@ -34,12 +35,13 @@ function Addlist({data,DeleteList}){
   )
 }
 
-function Inquiry({mylist,DeleteList}){
+function Request({myList,DeleteList}){
 return(
-  <div className="inquiry">
+  <div className="request">
+    <h3>신청 내역</h3>
     <ul>
-      {mylist.map((data) => 
-      <Addlist
+      {myList.map((data) => 
+      <RequestList
       key = {data.id}
       data = {data}
       DeleteList = {DeleteList}
@@ -48,4 +50,4 @@ return(
   </div>
 )
 }
-export default Inquiry;
+export default Request;

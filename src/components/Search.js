@@ -6,8 +6,8 @@ function Toggle({dropDown,onOrderChange}){
   }
   return(
     <ul>
-      <li onClick={() => onOrderChange('people')}>고객명</li>
-      <li onClick={() => onOrderChange('date')}>등록일</li>
+      <li onClick={() => onOrderChange('')}>고객명</li>
+      <li onClick={() => onOrderChange('date')}>요청일</li>
     </ul>
   )
 }
@@ -17,19 +17,21 @@ function Search({onTextChange,onOrderChange}){
 
 return(
   <div id="search">
-    <BiSearch />
-    <input 
-    type="text"
-    onChange={(event) => {onTextChange(event.target.value)}}
-    />
-      <button 
-      type="button"
-      onClick={()=>setDropDown(!dropDown)}>
-       <BiCaretDown />
-      </button>
-      <Toggle
-      dropDown = {dropDown}
-      onOrderChange = {onOrderChange} />
+    <div>
+      <BiSearch />
+      <input 
+      type="text"
+      onChange={(event) => {onTextChange(event.target.value)}}
+      />
+        <button 
+        type="button"
+        onClick={()=>setDropDown(!dropDown)}>
+        <BiCaretDown />
+        </button>
+    </div>
+        <Toggle
+        dropDown = {dropDown}
+        onOrderChange = {onOrderChange} />
   </div>
 )
 }

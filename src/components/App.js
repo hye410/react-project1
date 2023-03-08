@@ -1,50 +1,51 @@
 import { useCallback, useEffect, useState } from "react";
-import AddInquiry from "./AddInquiry";
-import Inquiry from "./Inquiry";
+import AddRequest from "./AddRequest";
+import Request from "./Request";
 import Search from "./Search";
 import './App.css';
 import { BiArchive } from "react-icons/bi";
 
 function App() {
-  const [mylist,setMylist] = useState([]);
-  const [order,setOrder] = useState('people');
+  const [myList,setMyList] = useState([]);
+  const [order,setOrder] = useState('date');
   const [text,setText] = useState('');
 
   const fetchData =
     useCallback(() => {
     fetch('./data.json')
     .then(response => response.json())
-    .then(result => setMylist(result))
+    .then(result => setMyList(result))
   },[]);
 
   useEffect(fetchData,[fetchData]);
 
-  const DeleteList = (btnId) => setMylist(mylist.filter((item) => item.id !== btnId))
+  const DeleteList = (btnId) => setMyList(myList.filter((item) => item.id !== btnId))
 
   const newList =    
-      mylist.filter((item) => {
+      myList.filter((item) => {
         return(
           item.people.toLowerCase().includes(text.toLowerCase()) ||
           item.body.includes(text.toLowerCase()) ||
           item.title.includes(text.toLowerCase())
         )
-      }).sort((a,b) => b[order] - a[order])
-
+      }).sort((a,b) => order === 'date' ? b[order] - a[order] : 
+              a['people'] < b['people'] ? -1 : 
+              a['people'] > b['people'] ? 1 : 0);
 
   return (
     <div id="wrap">
-      <h1><BiArchive />문의내역</h1>
+      <h1><BiArchive />&nbsp;해피콜 신청</h1>
       <Search
       onTextChange = {(value) => setText(value)}
       onOrderChange = {(standard) => setOrder(standard)}
        />
       <div id="content">
-        <AddInquiry 
-        addInfo = {(newinfo) => setMylist([...mylist,newinfo])}
-        newId = {mylist.reduce((max,item) => item.id > max? item.id : max,0)} 
+        <AddRequest 
+        addInfo = {(newInfo) => setMyList([...myList,newInfo])}
+        newId = {myList.reduce((max,item) => item.id > max? item.id : max,0)} 
         />
-        <Inquiry
-        mylist = {newList}
+        <Request
+        myList = {newList}
         DeleteList = {DeleteList}        
          />           
 
