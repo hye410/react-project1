@@ -2,8 +2,9 @@ import { useState } from "react";
 
 
 function InfoContent({newInfo,setNewInfo,sendInfo}){
-  
+
   const now = new Date().toISOString().slice(0,10);
+  // const [Now,setNow] = useState(now);
   const nowDate = new Date().getDate() + 7;
   // console.log(nowDate)
   const ableDate = new Date().setDate(nowDate);
@@ -43,7 +44,9 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
         defaultValue={now}
         min = {now}
         max = {maxDate}
-        onChange = {(event) => setNewInfo({...newInfo,date:event.target.value})}/>
+        onChange = 
+        {(event) => setNewInfo({...newInfo,date:event.target.value})
+        }/>
     </dd>
     <dt>
       <label htmlFor="userText">내용</label>
@@ -75,15 +78,14 @@ function AddRequest({addInfo,newId}){
   const [newInfo,setNewInfo] = useState(clear);
 
   function sendInfo(){
-
-    const day = new Date(newInfo.date);
-    const dday = day.getTime();
+    const day = new Date(newInfo.date).getTime();
+    
 
     const add = {
       people: newInfo.people,
       id: newId + 1,
       title : newInfo.title,
-      date :dday,
+      date :day,
       // date: newInfo.date,
       body: newInfo.body
     }

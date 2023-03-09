@@ -9,7 +9,7 @@ function App() {
   const [myList,setMyList] = useState([]);
   const [order,setOrder] = useState('date');
   const [text,setText] = useState('');
-
+  
   const fetchData =
     useCallback(() => {
     fetch('./data.json')
