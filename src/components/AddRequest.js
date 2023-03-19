@@ -63,6 +63,18 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
             }/>
         </dd>
         <dt>
+          <label htmlFor="userPicture">사진 첨부</label>
+        </dt>
+        <dd>
+          <input 
+          type="file" 
+          id="userPicture" 
+          name="userPicture"
+          onChange = 
+          {(event) => setNewInfo({...newInfo,image:event.target.value})
+          }/>
+        </dd>
+        <dt>
           <label htmlFor="userText">내용</label>
         </dt>
         <dd>
