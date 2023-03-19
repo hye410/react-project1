@@ -4,6 +4,8 @@ import Request from "./Request";
 import Search from "./Search";
 import './App.css';
 import { BiArchive } from "react-icons/bi";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   const [myList,setMyList] = useState([]);
@@ -33,24 +35,25 @@ function App() {
               a['people'] > b['people'] ? 1 : 0);
 
   return (
-    <div id="wrap">
-      <h1><BiArchive />&nbsp;해피콜 신청</h1>
+    <>
+    <Header />
+    <article id="wrap">
+      <h3><BiArchive />&nbsp;해피콜 신청</h3>
       <Search
-      onTextChange = {(value) => setText(value)}
-      onOrderChange = {(standard) => setOrder(standard)}
-       />
-      <div id="content">
-        <AddRequest 
+        onTextChange = {(value) => setText(value)}
+        onOrderChange = {(standard) => setOrder(standard)}
+      />
+      <AddRequest 
         addInfo = {(newInfo) => setMyList([...myList,newInfo])}
         newId = {myList.reduce((max,item) => item.id > max? item.id : max,0)} 
-        />
-        <Request
+      />
+      <Request
         myList = {newList}
         DeleteList = {DeleteList}        
-         />           
-
-      </div>
-    </div>
+      />      
+    </article>
+    <Footer />
+    </>
   );
 }
 

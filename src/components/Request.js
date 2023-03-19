@@ -1,4 +1,5 @@
-import { BiTrash } from "react-icons/bi";
+import { BiTrash,BiCalendarCheck } from "react-icons/bi";
+import './css/Request.css';
 
 function RequestList({data,DeleteList}){
   
@@ -23,31 +24,40 @@ function RequestList({data,DeleteList}){
       <dt>제목</dt>
       <dd>{data.title}</dd>
       <dt>내용</dt>
-      <dd>{data.body}</dd>
+      <dd>
+        <figure>
+          <img src={data.image} alt="사진" />
+          <figcaption>
+            {data.body}
+          </figcaption>
+        </figure>
+      </dd>
+      <dd>
+        <button 
+        type="button"
+        onClick={() => DeleteList(data.id)}
+        >
+        <BiTrash />
+        </button>
+      </dd>
     </dl>
-    <button 
-    type="button"
-    onClick={() => DeleteList(data.id)}
-    >
-      <BiTrash />
-      </button>
   </li>
   )
 }
 
 function Request({myList,DeleteList}){
 return(
-  <div className="request">
-    <h3>신청 내역</h3>
+  <section id="list">
+    <h4><BiCalendarCheck />신청내역</h4>
     <ul>
       {myList.map((data) => 
       <RequestList
-      key = {data.id}
-      data = {data}
-      DeleteList = {DeleteList}
+        key = {data.id}
+        data = {data}
+        DeleteList = {DeleteList}
       />)}
     </ul>
-  </div>
+  </section>
 )
 }
 export default Request;

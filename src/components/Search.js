@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { BiCaretDown,BiSearch } from "react-icons/bi";
+import './css/Search.css';
+
 function Toggle({dropDown,onOrderChange}){
   if(dropDown){
     return null
@@ -29,7 +31,7 @@ return(
         <BiCaretDown />
         </button>
     </div>
-        <Toggle
+    <Toggle
         dropDown = {dropDown}
         onOrderChange = {onOrderChange} />
   </div>
