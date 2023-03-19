@@ -2,13 +2,13 @@
   padding : 30px 0 ;
   display: flex;
   justify-content: center;   
-  position: relative; 
-  margin-bottom : 10px;  
-  /* background-color: #575539; */
+  margin-bottom : 10px;
+  position: relative;
+  width : 800px;
+  margin :0 auto;
 }
 
 #search>div{
-  width : 1200px;
   margin : 0 auto 30px;
   display: flex;
   text-align : center;
@@ -29,7 +29,6 @@
   padding : 5px 0;
   border : none;
   text-indent: 10px;
-
 }
 
 #search>div>button{
@@ -39,12 +38,17 @@
   background-color: #cbdb29;
   box-sizing: border-box;
   border : 1px solid #282928;
+  color : #fff;
+}
+
+#search>div>button>svg{
+  font-size: 18px;
 }
 
 #search>ul{
   position: absolute;
-  bottom:-10px;
-  right:237.5px;
+  bottom:20px;
+  right:38px;
   background-color: #fff;
   width : 100px;
   text-align: center;

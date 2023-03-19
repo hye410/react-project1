@@ -7,7 +7,6 @@
 
 #add>h4{
   font-size: 25px;
-  /* margin-bottom: 30px; */
   border-bottom:2px solid #666;
   padding : 15px 10px;
   display: flex;
@@ -26,12 +25,12 @@
 }
 
 #add>div{
-  width : 80%;
   margin: 0 auto 15px;
-  padding : 020px;
-  border : 1px solid #666;
+  padding : 20px;
   border-top : none;
-  background-color: rgb(168, 213, 221);
+  border : 1px solid #666;
+  /* background-color: rgb(168, 213, 221); */
+  /* background-color: #575539; */
 }
 
 #add>div>dl{
@@ -60,7 +59,7 @@
 #add>div>dl>dd>input{
   width : 90%;
   padding : 10px 0 ;
-  border : none;
+  /* border : none; */
   text-indent: 5px;
 }
 
@@ -79,7 +78,7 @@
   cursor: pointer;
   width : 37%;
   padding : 15px 0;
-  margin-left : 57px;
+  margin-left : 70px;
   font-size: 17px;
   margin-bottom :30px;
   background-color: #cbdb29;
