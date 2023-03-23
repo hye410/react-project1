@@ -13,11 +13,15 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
   // console.log(maxDate)
   
   const [toggle,setToggle] = useState(false);
-
+  
   return(
     <section id="add">
-      <h4 onClick={()=>setToggle(!toggle)}>
-        <span><BiCalendarPlus />신청하기</span>
+      <h4 
+      onClick={()=>{setToggle(!toggle);console.log(now)
+                    setNewInfo({...newInfo,date:now})}}>
+        <span>
+          <BiCalendarPlus />신청하기
+        </span>
         <BiChevronsDown />
       </h4>
       {
@@ -59,8 +63,11 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
             min = {now}
             max = {maxDate}
             onChange = 
-            {(event) => setNewInfo({...newInfo,date:event.target.value})
-            }/>
+            {
+              (event) => {setNewInfo({...newInfo,date:event.target.value})}
+            }
+            />
+
         </dd>
         <dt>
           <label htmlFor="userPicture">사진 첨부</label>
@@ -85,7 +92,7 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
       </dl>
       <p>
         <button type="button"
-          onClick={sendInfo}>
+          onClick={()=>{sendInfo(); setToggle(!toggle)}}>
             신청하기
         </button>
       </p>
@@ -122,7 +129,6 @@ function AddRequest({addInfo,newId}){
     }
     addInfo(add);
     setNewInfo(clear); 
-    // console.log(newInfo)
   }
 
 return(
