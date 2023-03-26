@@ -39,6 +39,7 @@
   box-sizing: border-box;
   border : 1px solid #282928;
   color : #fff;
+  cursor: pointer;
 }
 
 #search>div>button>svg{
@@ -61,6 +62,7 @@
   padding : 10px 0;
   border-bottom : 1px solid #666;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 #search>ul>li:last-child{
