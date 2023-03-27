@@ -5,7 +5,6 @@ import { BiCalendarPlus,BiChevronsDown } from "react-icons/bi";
 function InfoContent({newInfo,setNewInfo,sendInfo}){
 
   const now = new Date().toISOString().slice(0,10);
-  // const [Now,setNow] = useState(now);
   const nowDate = new Date().getDate() + 7;
   // console.log(nowDate)
   const ableDate = new Date().setDate(nowDate);
@@ -17,7 +16,7 @@ function InfoContent({newInfo,setNewInfo,sendInfo}){
   return(
     <section id="add">
       <h4 
-      onClick={()=>{setToggle(!toggle);console.log(now)
+      onClick={()=>{setToggle(!toggle);
                     setNewInfo({...newInfo,date:now})}}>
         <span>
           <BiCalendarPlus />신청하기
@@ -124,7 +123,6 @@ function AddRequest({addInfo,newId}){
       id: newId + 1,
       title : newInfo.title,
       date :day,
-      // date: newInfo.date,
       body: newInfo.body
     }
     addInfo(add);
