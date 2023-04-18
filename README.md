@@ -1,31 +1,36 @@
-# Site Overview
+# React Project
+<img 
+src="./public/images/react-main.png"
+width="400px"
+height="auto"
+/>
 
-##  개발범위
-  - React-Project
+## About This Project
+ React를 사용하여 만든 페이지로 신청하기 버튼을 클릭하여 해피콜을 신청하면 하단에 있는 신청 내역에 신청 내용이 등록됩니다.
+ 또한 상단에 있는 검색창으로 원하는 내용을 검색해 볼 수 있으며, 정렬 기준에 따라 새롭게 정렬을 할 수도 있습니다.
 
-## 디바이스
-  - PC
+ ## Stacks
+  <img 
+  src="./public/images/html5-icon.png"
+  width="40px"
+    />
+   <img 
+ src="./public/images/css3-icon.png"
+ width="40px"
+  />
+   <img 
+ src="./public/images/javascript-icon.png"
+ width="40px"
+  />
+   <img 
+ src="./public/images/react-icon.png"
+ width="40px"
+  />
 
-##  개발언어
-  - HTML5
-  - CSS3
-  - JavaScript
-
-## 배운점
-  1. 고객명으로 정렬하기
-  - sort의 return값을  
-    a > b = 0 을 하면 가나다순으로 정렬될 것이라고 생각했는데,  
-    한글을 정렬할 때에는
-    a < b  일 경우 -1, a > b일 경우 1, 그 외의 경우에는 0이라는 return값을 정의해야 제대로 정렬이 된다는 것을 알게 되었다.
-  
-  2. 콜 요청 날짜 오늘로부터 일주일까지로 한정하기
-  - 그냥 단순하게 new Date()로 설정할 수 있을 것이라고 생각했는데,
-    현지 시간 문제와 min과 max에 들어갈 때의 형식이 있어서 그거에 맞춰 수정을 해줘야 했다.
-    사실 오류가 많이 났던 부분이었는데, 그래도 끝까지 포기하지 않고 해내서 이번 프로젝트에서 가장 큰 성취감을 느꼈던 부분이었다.
-
-  3. AddRequest.js 신청 양식 reset하기
-  - 리스트에 추가할 때 onChange를 사용했기 때문에
-    변화가 없을 경우에 날짜가 NaN으로 오류가 발생했다. 이부분도 고민을 많이 했는데 h4를 클릭해서 toggle할 때 날짜를 now로 셋팅하게끔 설정하였더니 문제를 해결할 수 있었다.
-
-
-
+  ## Skill
+  <a 
+  href="https://drive.google.com/file/d/1zbnkPF3ndCX4zs6YSXZsGQIkvQIsC_nh/view?usp=sharing"
+  target="blank">
+  기능 설명 보러 가기(Click)
+  </a>
+    
